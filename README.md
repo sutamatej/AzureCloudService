@@ -55,6 +55,7 @@ TODO
 
 * Investigate usage of (strongly typed) Html helpers in email templates
 * Remove the dependency on the specific Razor Engine version (contribute to ActionMailer project)
+* Figure out job scheduling with [Quartz.NET][3]
 
 Resources
 ---------
@@ -68,3 +69,5 @@ Resources
 [1]:http://nuget.org/packages/ActionMailer.Standalone/
 
 [2]:http://blogs.msdn.com/b/philliphoff/archive/2012/06/08/add-files-to-your-windows-azure-package-using-role-content-folders.aspx
+
+[3]:http://www.quartz-scheduler.net/

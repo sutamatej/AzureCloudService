@@ -7,7 +7,7 @@ Sending emails with worker role and Razor engine
 ------------------------------------------------
 
 [ActionMailer.Standalone][1] package is used in order
-to send email messages from worker project which is a non-MVC project. This package enables usage of
+to send email messages from worker role which is a non-MVC project. This package enables usage of
 Razor templating engine for email content. Unfortunately, at the moment ActionMailer.Standalone
 specifically requires Razor engine of version 3.0.8, which makes it a bit messy when trying to install
 ActionMailer through NuGet (NuGet installs 3.2.0 by default).

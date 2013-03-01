@@ -12,17 +12,22 @@ Razor templating engine for email content. Unfortunately, at the moment ActionMa
 specifically requires Razor engine of version 3.0.8, which makes it a bit messy when trying to install
 ActionMailer through NuGet (NuGet installs 3.2.0 by default).
 
-How does it work?
------------------
+Project description
+-------------------
 
-Web role project inserts messages into a job queue which is periodically checked by worker role.
+The solution currently consists of three projects: web role project called `Web` which represents
+the website, worker role project called `BackgroundWorker` which executes background tasks and finally
+azure cloud service project called `CloudService` which ties the previous two together
+and is neccessary to deploy the solution to Widows Azure.
+
+Web role inserts messages into a job queue which is periodically checked by worker role.
 The role picks up a message, parses it and executes an applicable job. In this case an email job
 renders an email body from a template and sends it, but it's possible to create other types of jobs
 depending on your needs.
 
-[Role content folders][2] are leveraged to ensure that correct template paths are used. All the email
-templates are copied to BackgroundWorker role content folder during solution build. This is achieved
-with `AfterBuild` target in BackgroundWorker project file:
+[Role content folders][2] are utilized to ensure that correct template paths are used. All the email
+templates are copied to `BackgroundWorker` role content folder during solution build. This is achieved
+with `AfterBuild` target in `BackgroundWorker` project file:
 
 ```xml
 <Target Name="AfterBuild">
@@ -34,12 +39,21 @@ with `AfterBuild` target in BackgroundWorker project file:
 </Target>
 ```
 
-Emails are rendered into your `C:\Temp` folder.
+The `CloudService` project file has been manually edited to include all the files from `BackgroundWorker`
+role content folder:
+
+```xml
+<ItemGroup>
+  <Content Include="BackgroundWorkerContent\EmailTemplates\*.*" />
+</ItemGroup>
+```
+
+After a successful execution emails are rendered into your `C:\Temp` folder.
 
 TODO
 ----
 
-* Investigate usage of (stringly typed) Html helpers in email templates
+* Investigate usage of (strongly typed) Html helpers in email templates
 * Remove the dependency on the specific Razor Engine version (contribute to ActionMailer project)
 
 Resources

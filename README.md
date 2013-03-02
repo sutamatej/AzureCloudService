@@ -12,9 +12,6 @@ Razor templating engine for email content. Unfortunately, at the moment ActionMa
 specifically requires Razor engine of version 3.0.8, which makes it a bit messy when trying to install
 ActionMailer through NuGet (NuGet installs 3.2.0 by default).
 
-Project description
--------------------
-
 The solution currently consists of three projects: web role project called `Web` which represents
 the website, worker role project called `BackgroundWorker` which executes background tasks and finally
 azure cloud service project called `CloudService` which ties the previous two together

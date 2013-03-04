@@ -11,12 +11,11 @@ namespace BackgroundWorker.Application.Jobs.Mail
 
         // Do fancy data loading here
 
-        public ApprovalEmailModel GetApprovalEmailModel()
+        public GoodbyeEmailModel GetGoodbyeEmailModel()
         {
-            return new ApprovalEmailModel
+            return new GoodbyeEmailModel
             {
-                UserName = "James Bond",
-                Date = DateTime.Today
+                UserName = "James Bond"
             };
         }
     }

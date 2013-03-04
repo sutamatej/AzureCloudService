@@ -83,7 +83,7 @@
     <Compile Include="Application\Jobs\Mail\IMailer.cs" />
     <Compile Include="Application\Jobs\Mail\Mailer.cs" />
     <Compile Include="Application\Jobs\Mail\MailJob.cs" />
-    <Compile Include="Application\Jobs\Mail\Models\ApprovalEmailModel.cs" />
+    <Compile Include="Application\Jobs\Mail\Models\GoodbyeEmailModel.cs" />
     <Compile Include="Application\QueueMessageParser.cs" />
     <Compile Include="Application\QueueMessageProcessor.cs" />
     <Compile Include="Application\Services\ISleepService.cs" />

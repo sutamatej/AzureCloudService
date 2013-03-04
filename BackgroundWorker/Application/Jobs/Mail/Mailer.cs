@@ -27,7 +27,7 @@ namespace BackgroundWorker.Application.Jobs.Mail
             return Email("Welcome");
         }
 
-        public RazorEmailResult Goodbye(ApprovalEmailModel model)
+        public RazorEmailResult Goodbye(GoodbyeEmailModel model)
         {
             From = "john@john.com";
             To.Add("asdf@asdf.com");

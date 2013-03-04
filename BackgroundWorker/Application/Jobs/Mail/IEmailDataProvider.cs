@@ -4,6 +4,6 @@ namespace BackgroundWorker.Application.Jobs.Mail
 {
     public interface IEmailDataProvider
     {
-        ApprovalEmailModel GetApprovalEmailModel();
+        GoodbyeEmailModel GetGoodbyeEmailModel();
     }
 }

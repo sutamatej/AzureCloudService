@@ -7,6 +7,6 @@ namespace BackgroundWorker.Application.Jobs.Mail
     {
         RazorEmailResult Welcome();
 
-        RazorEmailResult Goodbye(ApprovalEmailModel model);
+        RazorEmailResult Goodbye(GoodbyeEmailModel model);
     }
 }

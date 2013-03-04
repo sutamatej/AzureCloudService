@@ -29,7 +29,7 @@ namespace BackgroundWorker.Application.Jobs.Mail
                     _mailer.Welcome().DeliverAsync();
                     break;
                 case "goodbye":
-                    var model = _emailDataProvider.GetApprovalEmailModel();
+                    var model = _emailDataProvider.GetGoodbyeEmailModel();
                     _mailer.Goodbye(model).DeliverAsync();
                     break;
                 default:
